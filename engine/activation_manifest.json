@@ -1,0 +1,14 @@
+{
+  "device": "Google Pixel 7 Pro (Cheetah)",
+  "carrier": "Google Fi (310-260)",
+  "package": "eSIM Manager",
+  "apn": "wholesale",
+  "eUICC_bypass": true,
+  "privileges": [
+    "WRITE_EMBEDDED_SUBSCRIPTIONS",
+    "READ_PRIVILEGED_PHONE_STATE",
+    "MODIFY_PHONE_STATE",
+    "BIND_EUICC_SERVICE",
+    "BIND_TELECOM_CONNECTION_SERVICE"
+  ]
+}
