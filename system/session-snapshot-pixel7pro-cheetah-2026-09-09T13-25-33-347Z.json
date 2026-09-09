@@ -1,0 +1,389 @@
+{
+  "snapshot_meta": {
+    "session_id": "SNAP_1788960316350_1FA3143D",
+    "timestamp": "2026-09-09T13:25:16.350Z",
+    "schema": "https://tie.engine/schemas/v2.4/session-snapshot.json",
+    "generator": "T.I.E. Unlimited Patcher Session Snapshot Service",
+    "mode": "ZERO_PII_HARDENED",
+    "version": "2.4.0",
+    "integrity_sha256": "3d10b6dbe93ae9f2f3596f168029d1e6a15d29c508cc59609e99b5a76c151258"
+  },
+  "target_device_profile": {
+    "device": "Google Pixel 7 Pro (Cheetah)",
+    "carrier": "Google Fi (310-260)",
+    "package": "eSIM Manager",
+    "apn": "wholesale",
+    "eUICC_bypass": true,
+    "privileges": [
+      "WRITE_EMBEDDED_SUBSCRIPTIONS",
+      "READ_PRIVILEGED_PHONE_STATE",
+      "MODIFY_PHONE_STATE",
+      "BIND_EUICC_SERVICE",
+      "BIND_TELECOM_CONNECTION_SERVICE"
+    ]
+  },
+  "active_patches": [
+    {
+      "id": "PATCH_PIXEL7_EUICC_BYPASS",
+      "name": "Google Pixel 7 Pro (Cheetah) eUICC Bypass",
+      "status": "APPLIED",
+      "target_device": "Google Pixel 7 Pro (Cheetah)",
+      "baseband": "Shannon 5300g PCIe",
+      "carrier": "Google Fi (310-260)",
+      "applied_at": "2026-09-03T12:00:00Z",
+      "sha256": "0xcd930a4f8111623b55ab734a08f4fa6909362949920665c18d25e7405508a1eb"
+    },
+    {
+      "id": "PATCH_CELLULAR_REDIRECT_ATOMIC",
+      "name": "Cellular Config Redirector",
+      "version": "1.0.4-STABLE",
+      "status": "ACTIVE_SYMLINK",
+      "source_path": "/data/vendor/modem_config",
+      "target_redirect_path": "/sdcard/modem_override",
+      "backup_dir": "/data/local/tmp/modem_backups",
+      "integrity_log": "modem_config.sha256"
+    },
+    {
+      "id": "PATCH_WHOLESALE_APN_BEARER",
+      "name": "Wholesale APN Carrier Config Injection",
+      "status": "ACTIVE",
+      "interface": "rmnet_data0",
+      "apn": "wholesale",
+      "carrier_lock_override": true,
+      "plmn": "310-260"
+    },
+    {
+      "id": "PATCH_MAGISK_PRIV_APP_OVERLAY",
+      "name": "Magisk Systemless Priv-App eSIM Manager",
+      "status": "GRANTED",
+      "package": "eSIM Manager",
+      "privileges": [
+        "WRITE_EMBEDDED_SUBSCRIPTIONS",
+        "READ_PRIVILEGED_PHONE_STATE",
+        "MODIFY_PHONE_STATE",
+        "BIND_EUICC_SERVICE",
+        "BIND_TELECOM_CONNECTION_SERVICE"
+      ]
+    },
+    {
+      "id": "PATCH_SAILY_ONELINK_SGP22",
+      "name": "Saily OneLink & GSMA SGP.22 eSIM Provisioning Vector",
+      "status": "PROVISIONED",
+      "script": "Install_saily.onelink.me.sh",
+      "onelink_url": "https://TIE_eSIM_saily.onelink.me",
+      "smdp": "smdp.1global.com",
+      "iccid": "89033023427100000000009924552528",
+      "imei": "359470646111791"
+    },
+    {
+      "id": "PATCH_CAN1_ISO_TP",
+      "name": "CAN1 Bus Dynamic Patcher",
+      "status": "ATTACHED",
+      "script": "can1_patch.sh",
+      "baudrate": 500000
+    },
+    {
+      "id": "PATCH_PERSISTENCE_WATCHDOG",
+      "name": "Persistence Watchdog Guardian",
+      "status": "MONITORING",
+      "auto_heal": true,
+      "sensitivity": 85
+    }
+  ],
+  "active_interface_pids": {
+    "interfaces": [
+      {
+        "interface": "rmnet_data0",
+        "type": "Cellular Modem Bearer",
+        "state": "ACTIVE",
+        "associated_pids": [],
+        "apn": "wholesale",
+        "ip_protocol": "IPv4v6",
+        "mtu": 1500
+      },
+      {
+        "interface": "can0",
+        "type": "CAN Bus Controller 0",
+        "state": "ONLINE",
+        "associated_pids": [],
+        "bitrate": 500000
+      },
+      {
+        "interface": "can1",
+        "type": "CAN Bus Controller 1 (Patcher)",
+        "state": "PATCHED",
+        "associated_pids": [],
+        "bitrate": 500000
+      },
+      {
+        "interface": "lo",
+        "type": "Loopback Local IPC",
+        "state": "ACTIVE",
+        "associated_pids": [
+          50
+        ]
+      },
+      {
+        "interface": "eth1",
+        "type": "Container Gateway",
+        "state": "ONLINE",
+        "associated_pids": [
+          5,
+          6,
+          13,
+          14
+        ]
+      }
+    ],
+    "network_devices": [
+      {
+        "name": "lo",
+        "address": "127.0.0.1",
+        "family": "IPv4",
+        "internal": true,
+        "mac": "00:00:00:00:00:00"
+      },
+      {
+        "name": "lo",
+        "address": "::1",
+        "family": "IPv6",
+        "internal": true,
+        "mac": "00:00:00:00:00:00"
+      },
+      {
+        "name": "eth1",
+        "address": "169.254.8.1",
+        "family": "IPv4",
+        "internal": false,
+        "mac": "00:00:00:00:00:00"
+      },
+      {
+        "name": "eth1",
+        "address": "fddf:3978:feb1:d745::c001",
+        "family": "IPv6",
+        "internal": false,
+        "mac": "00:00:00:00:00:00"
+      },
+      {
+        "name": "eth2",
+        "address": "169.254.9.1",
+        "family": "IPv4",
+        "internal": false,
+        "mac": "42:00:4e:49:43:00"
+      },
+      {
+        "name": "eth2",
+        "address": "169.254.169.1",
+        "family": "IPv4",
+        "internal": false,
+        "mac": "42:00:4e:49:43:00"
+      }
+    ],
+    "active_tasks": {},
+    "running_system_pids": [
+      {
+        "pid": 1,
+        "ppid": 0,
+        "user": "root",
+        "cpu": "0.0",
+        "mem": "0.1",
+        "command": "start.sh /bin/bash ./start.sh"
+      },
+      {
+        "pid": 5,
+        "ppid": 1,
+        "user": "root",
+        "cpu": "0.0",
+        "mem": "0.2",
+        "command": "nginx nginx: master process nginx -g daemon off;"
+      },
+      {
+        "pid": 6,
+        "ppid": 1,
+        "user": "root",
+        "cpu": "0.0",
+        "mem": "0.7",
+        "command": "control-plane-a /app/control-plane-api/control-plane-api --listen-addr=:8000 --app-dir=/app/applet --default-app-port=3000"
+      },
+      {
+        "pid": 13,
+        "ppid": 5,
+        "user": "nobody",
+        "cpu": "0.0",
+        "mem": "0.2",
+        "command": "nginx nginx: worker process"
+      },
+      {
+        "pid": 14,
+        "ppid": 5,
+        "user": "nobody",
+        "cpu": "0.0",
+        "mem": "0.1",
+        "command": "nginx nginx: worker process"
+      },
+      {
+        "pid": 17,
+        "ppid": 1,
+        "user": "root",
+        "cpu": "0.0",
+        "mem": "0.0",
+        "command": "tail tail -f /dev/null"
+      },
+      {
+        "pid": 26,
+        "ppid": 6,
+        "user": "root",
+        "cpu": "0.0",
+        "mem": "2.2",
+        "command": "npm run dev --p npm run dev --port 3000 --host 0.0.0.0"
+      },
+      {
+        "pid": 38,
+        "ppid": 26,
+        "user": "root",
+        "cpu": "0.0",
+        "mem": "0.0",
+        "command": "sh sh -c tsx server.ts --port 3000 --host 0.0.0.0"
+      },
+      {
+        "pid": 39,
+        "ppid": 38,
+        "user": "root",
+        "cpu": "0.0",
+        "mem": "1.7",
+        "command": "node node /app/applet/node_modules/.bin/tsx server.ts --port 3000 --host 0.0.0.0"
+      },
+      {
+        "pid": 50,
+        "ppid": 39,
+        "user": "root",
+        "cpu": "0.3",
+        "mem": "7.1",
+        "command": "node /usr/local/bin/node --require /app/applet/node_modules/tsx/dist/preflight.cjs --import file:///app/applet/node_modules/tsx/dist/loader.mjs server.ts --port 3000 --host 0.0.0.0"
+      },
+      {
+        "pid": 62,
+        "ppid": 50,
+        "user": "root",
+        "cpu": "0.3",
+        "mem": "0.6",
+        "command": "esbuild /app/applet/node_modules/tsx/node_modules/esbuild/node_modules/@esbuild/linux-x64/bin/esbuild --service=0.27.4 --ping"
+      },
+      {
+        "pid": 68,
+        "ppid": 50,
+        "user": "root",
+        "cpu": "0.5",
+        "mem": "1.0",
+        "command": "esbuild /app/applet/node_modules/@esbuild/linux-x64/bin/esbuild --service=0.25.12 --ping"
+      },
+      {
+        "pid": 111,
+        "ppid": 50,
+        "user": "root",
+        "cpu": "0.0",
+        "mem": "0.0",
+        "command": "sh /bin/sh -c ps -eo pid,ppid,user,%cpu,%mem,comm,args"
+      },
+      {
+        "pid": 112,
+        "ppid": 111,
+        "user": "root",
+        "cpu": "0.0",
+        "mem": "0.0",
+        "command": "ps ps -eo pid,ppid,user,%cpu,%mem,comm,args"
+      }
+    ]
+  },
+  "environment_variables": {
+    "system_runtime": {
+      "platform": "linux",
+      "arch": "x64",
+      "release": "4.19.0-gvisor",
+      "uptime_seconds": 2943,
+      "loadavg": [
+        0,
+        0,
+        0
+      ],
+      "totalmem_mb": 4096,
+      "freemem_mb": 3470,
+      "node_version": "v22.23.2",
+      "pid": 50,
+      "cwd": "/app/applet"
+    },
+    "sanitized_process_env": {
+      "GOOGLE_RUNTIME": "nodejs22",
+      "LANGUAGE": "en_US:en",
+      "NO_UPDATE_NOTIFIER": "true",
+      "npm_config_user_agent": "npm/10.9.8 node/v22.23.2 linux x64 workspaces/false",
+      "NODE_VERSION": "22.23.2",
+      "DISABLE_HMR": "true",
+      "K_REVISION": "ais-dev-av7zrp3tdfpqyx5qw7b7l6-00003-v7g",
+      "CONTROL_PLANE_PORT": "8000",
+      "YARN_VERSION": "1.22.22",
+      "APP_URL": "https://ais-dev-av7zrp3tdfpqyx5qw7b7l6-118017985597.us-east1.run.app",
+      "npm_node_execpath": "/usr/local/bin/node",
+      "DEFAULT_APP_PORT": "3000",
+      "SHLVL": "0",
+      "HOME": "/root",
+      "PORT": "3000",
+      "npm_package_json": "/app/applet/package.json",
+      "NODE_OPTIONS": "--max-old-space-size=3072",
+      "npm_config_userconfig": "/root/.npmrc",
+      "npm_config_local_prefix": "/app/applet",
+      "NG_ALLOWED_HOSTS": "ais-dev-av7zrp3tdfpqyx5qw7b7l6-118017985597.us-east1.run.app",
+      "COLOR": "0",
+      "CLOUD_RUN_TIMEOUT_SECONDS": "3600",
+      "APPLET_ID": "d39721e9-3485-4ac9-9eed-32a0f0514911",
+      "K_CONFIGURATION": "ais-dev-av7zrp3tdfpqyx5qw7b7l6",
+      "_": "/app/control-plane-api/control-plane-api",
+      "npm_config_prefix": "/usr/local",
+      "npm_config_npm_version": "10.9.8",
+      "APPLET_DIR": "applet",
+      "npm_config_cache": "/root/.npm",
+      "GOMEMLIMIT": "512MiB",
+      "CONTROL_PLANE_API_DIR": "control-plane-api",
+      "npm_config_node_gyp": "/usr/local/lib/node_modules/npm/node_modules/node-gyp/bin/node-gyp.js",
+      "PATH": "/app/applet/node_modules/.bin:/app/node_modules/.bin:/node_modules/.bin:/usr/local/lib/node_modules/npm/node_modules/@npmcli/run-script/lib/node-gyp-bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+      "NEXT_TELEMETRY_DISABLED": "1",
+      "NODE": "/usr/local/bin/node",
+      "npm_package_name": "(♊t.i.e.u.p.♊)aiassistant.(app)terminal-intelligence-engine-unlimited-patcher",
+      "CNB_GROUP_ID": "33",
+      "CNB_USER_ID": "33",
+      "APP_DIR": "/app/applet",
+      "LANG": "en_US.UTF-8",
+      "npm_lifecycle_script": "tsx server.ts",
+      "K_SERVICE": "ais-dev-av7zrp3tdfpqyx5qw7b7l6",
+      "HOST": "0.0.0.0",
+      "npm_package_version": "0.0.0",
+      "npm_lifecycle_event": "dev",
+      "NGINX_PORT": "8080",
+      "npm_config_globalconfig": "/usr/local/etc/npmrc",
+      "npm_config_init_module": "/root/.npm-init.js",
+      "PWD": "/app/applet",
+      "LC_ALL": "en_US.UTF-8",
+      "npm_execpath": "/usr/local/lib/node_modules/npm/bin/npm-cli.js",
+      "GEMINI_API_KEY": "[REDACTED_SECURE_TOKEN_LEN_39]",
+      "npm_config_global_prefix": "/usr/local",
+      "AUTHORIZED_SERVICE_ACCOUNT_EMAIL": "[REDACTED_SECURE_TOKEN_LEN_66]",
+      "npm_command": "run-script",
+      "CSP_HEADER_VALUE": "frame-ancestors 'self' https://*.google.com https://localhost.corp.google.com:26001;",
+      "NODE_ENV": "development",
+      "CNB_STACK_ID": "google.gae.22",
+      "INIT_CWD": "/app/applet",
+      "EDITOR": "vi"
+    },
+    "client_state_sync": {
+      "isPatched": true,
+      "isHardenedMode": true,
+      "isVoiceEnabled": false,
+      "isTermuxRootActive": true,
+      "watchdogStatus": "HEALTHY",
+      "activeView": "esim",
+      "task": "GENERATE",
+      "capturedAt": "2026-09-09T13:25:18.294Z",
+      "userAgent": "Mozilla/5.0 (Linux; Android 15; Pixel 7 Pro Build/BP1A.250505.005.B1) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/151.0.7922.199 Mobile Safari/537.36"
+    }
+  }
+}
